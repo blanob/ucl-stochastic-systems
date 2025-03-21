@@ -14,7 +14,7 @@ def expRepair(rRepair):
     tRepair = np.random.exponential(rRepair**-1)
     return tRepair
 
-# A Function to implement a single step in a renewal process
+# Function to implement a single step of a simple renewal process
 def single_renewal(freq, n, rFailure, rRepair):
     
     checkpoints = checkpoint(freq, n)
@@ -27,7 +27,7 @@ def single_renewal(freq, n, rFailure, rRepair):
     
     for i in range(0, len(checkpoints)):
         if tFailure < checkpoints[i]:
-            offline += checkpoints[i]-tFailure+repair
+            offline += checkpoints[i]-tFailure+tRepair
             break
         elif tFailure > checkpoints[i]:
             offline += 0
@@ -35,7 +35,7 @@ def single_renewal(freq, n, rFailure, rRepair):
         
     return online, offline
 
-# A Function to implement a simple renewal process
+# Function to implement a simple renewal process
 def renewal(freq, n, rFailure, rRepair):
     
     checkpoints = checkpoint(freq, n)
@@ -54,7 +54,7 @@ def renewal(freq, n, rFailure, rRepair):
         
         for i in range(0, len(checkpoints)):
             if tFailure < checkpoints[i] - repair_old:
-                offline.append(checkpoints[i] - repair_old - tFailure + repair)
+                offline.append(checkpoints[i] - repair_old - tFailure + tRepair)
                 break
             elif tFailure > checkpoints[i] - repair_old:
                 offline.append(0)
@@ -63,4 +63,4 @@ def renewal(freq, n, rFailure, rRepair):
         repair_old = tRepair
         runtime = sum(online + offline)
         
-    return online + offline
+    return online, offline
