@@ -1,3 +1,2 @@
-
-Reveal.js slides source code, https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/revealjs/demo/index.qmd
-Quarto presentations with Reveal.js, https://prerelease.quarto.org/docs/presentations/revealjs/ 
+Reveal.js slides source code <https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/revealjs/demo/index.qmd>
+Quarto presentations with Reveal.js <https://prerelease.quarto.org/docs/presentations/revealjs/>
