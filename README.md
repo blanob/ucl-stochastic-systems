@@ -1,3 +1,4 @@
+[![Caption](https://blanob.github.io/assets/stats-science-header.png)]([https://www.ucl.ac.uk/])
 # ucl-stochastic-systems
 UCL Stochastic Systems (Fall 2024)
 
